@@ -12,7 +12,7 @@ let myFavoriteFoods = ["Pizza", "Chicken Alfredo", "Pulled Pork", "Smoothies"];
 
 // 1.b. TODO: Log your array of foods to the console with a message, similar
 //      to the example above
-console.log(myFavoriteFoods);
+console.log("My favorite foods are:", myFavoriteFoods);
 
 // 2. Array.length - tells you how many items are in the array
 console.log("--- 2. Length of an array ---");
@@ -70,6 +70,9 @@ console.log(`Added an animal to beginning: ${animalArray}`);
 
 // 4.c. TODO: Add a food at the beginning of the array & log the array
 
+myFavoriteFoods.unshift("Waffles");
+console.log("Added a new item at the beginning", myFavoriteFoods);
+
 // Example: Remove the first animal using Array.shift
 removedAnimal = animalArray.shift();
 console.log("Removed the first animal", removedAnimal);
@@ -78,19 +81,39 @@ console.log("The animals are now", animalArray);
 // 4.d TODO: Remove the food at the beginning of your array &
 //     log both the food removed and the updated array
 
+removedFood = myFavoriteFoods.shift();
+console.log("Removed the first item", removedFood);
+console.log("My favorite foods are now", myFavoriteFoods);
+
 // 4.e (STRETCH) TODO: Replace the second food in your array
 //      with another one of your favorite foods.
 //      Then log the updated array.
 
+const removedFoods = myFavoriteFoods.splice(1, 1, "Waffles");
+console.log("removed food", removedFoods);
+console.log("My new favorite foods are", myFavoriteFoods);
+
 // 4.f (STRETCH) TODO: Sort your favoriteFoods array
 //     in reverse alphabetical order. Log the array.
+
+myFavoriteFoods.sort();
+myFavoriteFoods.reverse();
+console.log(myFavoriteFoods);
 
 // 4.g (STRETCH) TODO: Convert your array to a string
 //     putting the word "and" between each item.
 //     eg "tacos and pizza and pasta". Log the string.
+
+//const foodsString=myFavoriteFoods.toString();
+//changed methods
+
+console.log("My favorite foods are", myFavoriteFoods.join(" and "));
 
 // 4.h (STRETCH) TODO: Make a new array that combines
 //     the favorite foods array with the animals array.
 //     Then log the new array.
 //     It should look something like:
 //     ['pizza', 'pasta', 'fish', 'cat', 'bird', 'dog']
+
+const foodAnimals = myFavoriteFoods.concat(animalArray);
+console.log("The food and animals combined are", foodAnimals);
